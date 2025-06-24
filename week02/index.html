@@ -4,371 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 2: German Connectors (Konnektoren) - German A2</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        
-        /* Navigation Bar */
-        .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .nav-title {
-            color: white;
-            font-size: 1.3em;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .nav-breadcrumb {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9em;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .nav-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .nav-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-        
-        .nav-btn.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 3px solid #e74c3c;
-            padding-bottom: 10px;
-        }
-        
-        h2 {
-            color: #34495e;
-            margin-top: 35px;
-            border-left: 4px solid #e74c3c;
-            padding-left: 15px;
-        }
-        
-        h3 {
-            color: #2c3e50;
-            margin-top: 25px;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 8px;
-        }
-        
-        /* Connector color coding */
-        .trotzdem {
-            background-color: #fff3e0;
-            border: 1px solid #ff9800;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #ef6c00;
-        }
-        
-        .deshalb {
-            background-color: #e8f5e8;
-            border: 1px solid #4caf50;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #2e7d32;
-        }
-        
-        .obwohl {
-            background-color: #e3f2fd;
-            border: 1px solid #2196f3;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #1565c0;
-        }
-        
-        .dass {
-            background-color: #f3e5f5;
-            border: 1px solid #9c27b0;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #7b1fa2;
-        }
-        
-        .ob {
-            background-color: #ffebee;
-            border: 1px solid #f44336;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #c62828;
-        }
-        
-        .w-word {
-            background-color: #fff8e1;
-            border: 1px solid #ffc107;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #f57f17;
-        }
-        
-        /* Structure boxes */
-        .structure-box {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-        }
-        
-        /* Example boxes */
-        .example-box {
-            background: #e7f3ff;
-            border-left: 4px solid #0066cc;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .example-transformation {
-            background: #f0fff0;
-            border: 1px solid #90ee90;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 5px;
-            font-style: italic;
-        }
-        
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 14px;
-        }
-        
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        
-        th {
-            background-color: #e74c3c;
-            color: white;
-            font-weight: bold;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-        
-        /* Key rule boxes */
-        .key-rule {
-            background-color: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .key-rule h4 {
-            color: #856404;
-            margin-top: 0;
-        }
-        
-        /* Comparison tables */
-        .comparison-table {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 20px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        /* W-words grid */
-        .w-words-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .w-word-item {
-            background: #fff8e1;
-            border: 1px solid #ffc107;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-        }
-        
-        .w-word-german {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #f57f17;
-            margin-bottom: 5px;
-        }
-        
-        .w-word-english {
-            color: #666;
-            font-style: italic;
-        }
-        
-        /* Bottom Navigation */
-        .bottom-nav {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin: 20px auto;
-            max-width: 900px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .bottom-nav-btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex: 1;
-            justify-content: center;
-        }
-        
-        .btn-primary {
-            background: #e74c3c;
-            color: white;
-        }
-        
-        .btn-secondary {
-            background: #95a5a6;
-            color: white;
-        }
-        
-        .btn-success {
-            background: #27ae60;
-            color: white;
-        }
-        
-        .bottom-nav-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .bottom-nav-btn:disabled {
-            background: #bdc3c7;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-buttons {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .bottom-nav {
-                flex-direction: column;
-            }
-            
-            .container {
-                margin: 10px;
-                padding: 20px;
-            }
-            
-            .w-words-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-        }
-        
-        /* Print styles */
-        @media print {
-            .navbar, .bottom-nav {
-                display: none;
-            }
-            body {
-                background-color: white;
-            }
-            .container {
-                box-shadow: none;
-                margin: 0;
-                padding: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body class="week02-theme">
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -386,98 +24,98 @@
     </nav>
 
     <div class="container">
-        <h1>🇩🇪 Week 2: German Connectors (Konnektoren)</h1>
+        <h1 class="page-title">🇩🇪 Week 2: German Connectors (Konnektoren)</h1>
         
-        <p style="text-align: center; font-size: 1.1em; color: #7f8c8d; margin-bottom: 30px;">
-            Master the most important A2-level German connectors: <span class="trotzdem">trotzdem</span>, 
-            <span class="deshalb">deshalb/deswegen</span>, <span class="obwohl">obwohl</span>, 
-            <span class="dass">dass</span>, <span class="ob">ob</span>, and <span class="w-word">W-Fragen</span>
+        <p class="intro-text">
+            Master the most important A2-level German connectors: <span class="highlight-accent">trotzdem</span>, 
+            <span class="highlight-secondary">deshalb/deswegen</span>, <span class="highlight-primary">obwohl</span>, 
+            <span class="highlight-warning">dass</span>, <span class="highlight-neutral">ob</span>, and <span class="highlight-success">W-Fragen</span>
         </p>
 
-        <h2>1. <span class="trotzdem">Trotzdem</span> (Nevertheless / However)</h2>
+        <h2 class="section-title">1. <span class="highlight-accent">Trotzdem</span> (Nevertheless / However)</h2>
         
-        <div class="key-rule">
+        <div class="rule-box">
             <h4>🎯 Function:</h4>
             <p>Expresses contrast or contradiction — "nevertheless," "however," or "despite that."</p>
             <h4>🔑 Key Rule:</h4>
-            <p><strong>Verb inversion</strong> — when <span class="trotzdem">trotzdem</span> begins a sentence, the verb comes immediately after it (Position 2), followed by the subject.</p>
+            <p><strong>Verb inversion</strong> — when <span class="highlight-accent">trotzdem</span> begins a sentence, the verb comes immediately after it (Position 2), followed by the subject.</p>
         </div>
 
         <div class="structure-box">
             <strong>Structure:</strong><br>
-            [Clause 1], <span class="trotzdem">trotzdem</span> [Verb] [Subject] [Rest of Clause 2]
+            [Clause 1], <span class="highlight-accent">trotzdem</span> [Verb] [Subject] [Rest of Clause 2]
         </div>
 
         <div class="example-box">
             <h4>📝 Examples:</h4>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich bin krank.</strong> + <strong>Ich gehe zur Arbeit.</strong><br>
-                → Ich bin krank, <span class="trotzdem">trotzdem</span> <strong>gehe</strong> ich zur Arbeit.
+                → Ich bin krank, <span class="highlight-accent">trotzdem</span> <strong>gehe</strong> ich zur Arbeit.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich bin satt.</strong> + <strong>Ich esse noch mal.</strong><br>
-                → Ich bin satt, <span class="trotzdem">trotzdem</span> <strong>esse</strong> ich noch mal.
+                → Ich bin satt, <span class="highlight-accent">trotzdem</span> <strong>esse</strong> ich noch mal.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Er ist sauer auf mich.</strong> + <strong>Ich rufe ihn an.</strong><br>
-                → Er ist sauer auf mich, <span class="trotzdem">trotzdem</span> <strong>rufe</strong> ich ihn an.
+                → Er ist sauer auf mich, <span class="highlight-accent">trotzdem</span> <strong>rufe</strong> ich ihn an.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich hatte keine Lust.</strong> + <strong>Ich habe weiter gearbeitet.</strong><br>
-                → Ich hatte keine Lust, <span class="trotzdem">trotzdem</span> <strong>habe</strong> ich weiter gearbeitet.
+                → Ich hatte keine Lust, <span class="highlight-accent">trotzdem</span> <strong>habe</strong> ich weiter gearbeitet.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Morgen habe ich eine Prüfung.</strong> + <strong>Heute will ich nicht lernen.</strong><br>
-                → Morgen habe ich eine Prüfung, <span class="trotzdem">trotzdem</span> <strong>will</strong> ich heute nicht lernen.
+                → Morgen habe ich eine Prüfung, <span class="highlight-accent">trotzdem</span> <strong>will</strong> ich heute nicht lernen.
             </div>
         </div>
 
-        <h2>2. <span class="deshalb">Deshalb / Deswegen</span> (Therefore / That's why)</h2>
+        <h2 class="section-title">2. <span class="highlight-secondary">Deshalb / Deswegen</span> (Therefore / That's why)</h2>
         
-        <div class="key-rule">
+        <div class="rule-box">
             <h4>🎯 Function:</h4>
             <p>Show cause and effect — "therefore," "so," "that's why." These two are completely interchangeable.</p>
             <h4>🔑 Key Rule:</h4>
-            <p><strong>Verb inversion</strong> — just like with <span class="trotzdem">trotzdem</span>.</p>
+            <p><strong>Verb inversion</strong> — just like with <span class="highlight-accent">trotzdem</span>.</p>
         </div>
 
         <div class="structure-box">
             <strong>Structure:</strong><br>
-            [Cause], <span class="deshalb">deshalb/deswegen</span> [Verb] [Subject] [Effect]
+            [Cause], <span class="highlight-secondary">deshalb/deswegen</span> [Verb] [Subject] [Effect]
         </div>
 
         <div class="example-box">
             <h4>📝 Examples:</h4>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich bin sehr hungrig.</strong> + <strong>Ich koche sehr schnell.</strong><br>
-                → Ich bin sehr hungrig, <span class="deshalb">deshalb</span> <strong>koche</strong> ich sehr schnell.
+                → Ich bin sehr hungrig, <span class="highlight-secondary">deshalb</span> <strong>koche</strong> ich sehr schnell.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich will in Deutschland leben.</strong> + <strong>Ich lerne Deutsch.</strong><br>
-                → Ich will in Deutschland leben, <span class="deshalb">deshalb</span> <strong>lerne</strong> ich Deutsch.
+                → Ich will in Deutschland leben, <span class="highlight-secondary">deshalb</span> <strong>lerne</strong> ich Deutsch.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich kann nicht gut kochen.</strong> + <strong>Ich will einen Kochkurs machen.</strong><br>
-                → Ich kann nicht gut kochen, <span class="deshalb">deshalb</span> <strong>will</strong> ich einen Kochkurs machen.
+                → Ich kann nicht gut kochen, <span class="highlight-secondary">deshalb</span> <strong>will</strong> ich einen Kochkurs machen.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich habe ein Problem.</strong> + <strong>Ich rufe meine Mutter an.</strong><br>
-                → Ich habe ein Problem, <span class="deshalb">deshalb</span> <strong>rufe</strong> ich meine Mutter an.
+                → Ich habe ein Problem, <span class="highlight-secondary">deshalb</span> <strong>rufe</strong> ich meine Mutter an.
             </div>
         </div>
 
-        <div class="comparison-table">
+        <div class="info-box">
             <h4>💡 Quick Comparison: Deshalb/Deswegen vs. Weil</h4>
-            <table>
+            <table class="content-table">
                 <thead>
                     <tr>
                         <th>Connector</th>
@@ -487,8 +125,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="deshalb">Deshalb/Deswegen</span></td>
-                        <td>Ich habe Geburtstag, <span class="deshalb">deshalb</span> <strong>lade</strong> ich Freunde ein.</td>
+                        <td><span class="highlight-secondary">Deshalb/Deswegen</span></td>
+                        <td>Ich habe Geburtstag, <span class="highlight-secondary">deshalb</span> <strong>lade</strong> ich Freunde ein.</td>
                         <td>Verb follows connector</td>
                     </tr>
                     <tr>
@@ -500,294 +138,294 @@
             </table>
         </div>
 
-        <h2>3. <span class="obwohl">Obwohl</span> (Although / Even though)</h2>
+        <h2 class="section-title">3. <span class="highlight-primary">Obwohl</span> (Although / Even though)</h2>
         
-        <div class="key-rule">
+        <div class="rule-box">
             <h4>🎯 Function:</h4>
             <p>Introduces a subordinate clause expressing contrast.</p>
             <h4>🔑 Key Rule:</h4>
-            <p><strong>Verb to the end</strong> of the <span class="obwohl">obwohl</span>-clause.</p>
+            <p><strong>Verb to the end</strong> of the <span class="highlight-primary">obwohl</span>-clause.</p>
         </div>
 
         <div class="structure-box">
             <strong>Structure:</strong><br>
-            [Main Clause], <span class="obwohl">obwohl</span> [Subject] [Rest] [Verb]<br>
+            [Main Clause], <span class="highlight-primary">obwohl</span> [Subject] [Rest] [Verb]<br>
             <strong>OR</strong><br>
-            <span class="obwohl">Obwohl</span> [Subject] [Rest] [Verb], [Main Clause with Verb at Position 2]
+            <span class="highlight-primary">Obwohl</span> [Subject] [Rest] [Verb], [Main Clause with Verb at Position 2]
         </div>
 
         <div class="example-box">
             <h4>📝 Examples:</h4>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Er steht früh auf.</strong> + <strong>Er hat Urlaub.</strong><br>
-                → <span class="obwohl">Obwohl</span> er Urlaub <strong>hat</strong>, steht er früh auf.
+                → <span class="highlight-primary">Obwohl</span> er Urlaub <strong>hat</strong>, steht er früh auf.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich habe kein Geld.</strong> + <strong>Ich arbeite nicht.</strong><br>
-                → <span class="obwohl">Obwohl</span> ich kein Geld <strong>habe</strong>, arbeite ich nicht.
+                → <span class="highlight-primary">Obwohl</span> ich kein Geld <strong>habe</strong>, arbeite ich nicht.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Er kann gut Deutsch sprechen.</strong> + <strong>Er will einen Deutschkurs machen.</strong><br>
-                → Er will einen Deutschkurs machen, <span class="obwohl">obwohl</span> er gut Deutsch sprechen <strong>kann</strong>.
+                → Er will einen Deutschkurs machen, <span class="highlight-primary">obwohl</span> er gut Deutsch sprechen <strong>kann</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Ich bin müde.</strong> + <strong>Ich kann nicht schlafen.</strong><br>
-                → <span class="obwohl">Obwohl</span> ich sehr müde <strong>bin</strong>, kann ich nicht schlafen.
+                → <span class="highlight-primary">Obwohl</span> ich sehr müde <strong>bin</strong>, kann ich nicht schlafen.
             </div>
         </div>
 
-        <h2>4. <span class="dass">Dass</span> (That)</h2>
+        <h2 class="section-title">4. <span class="highlight-warning">Dass</span> (That)</h2>
         
-        <div class="key-rule">
+        <div class="rule-box">
             <h4>🎯 Function:</h4>
             <p>Introduces a subordinate clause that explains or adds detail.</p>
             <h4>🔑 Key Rule:</h4>
-            <p>The conjugated verb goes to the end of the <span class="dass">dass</span>-clause.</p>
+            <p>The conjugated verb goes to the end of the <span class="highlight-warning">dass</span>-clause.</p>
         </div>
 
         <div class="structure-box">
             <strong>Structure:</strong><br>
-            [Main Clause], <span class="dass">dass</span> [Subject] [Rest] [Verb]
+            [Main Clause], <span class="highlight-warning">dass</span> [Subject] [Rest] [Verb]
         </div>
 
-        <h3>Basic Examples</h3>
+        <h3 class="subsection-title">Basic Examples</h3>
         <div class="example-box">
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Simple Statement:</strong><br>
                 Ich weiß. + Er kommt heute.<br>
-                → Ich weiß, <span class="dass">dass</span> er heute <strong>kommt</strong>.
+                → Ich weiß, <span class="highlight-warning">dass</span> er heute <strong>kommt</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Past Main Clause:</strong><br>
                 Ich wusste nicht. + Du kommst heute.<br>
-                → Ich wusste nicht, <span class="dass">dass</span> du heute <strong>kommst</strong>.
+                → Ich wusste nicht, <span class="highlight-warning">dass</span> du heute <strong>kommst</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Belief:</strong><br>
                 Ich denke. + Es regnet heute.<br>
-                → Ich denke, <span class="dass">dass</span> es heute <strong>regnet</strong>.
+                → Ich denke, <span class="highlight-warning">dass</span> es heute <strong>regnet</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Hope:</strong><br>
                 Ich hoffe. + Der Bus kommt pünktlich.<br>
-                → Ich hoffe, <span class="dass">dass</span> der Bus pünktlich <strong>kommt</strong>.
+                → Ich hoffe, <span class="highlight-warning">dass</span> der Bus pünktlich <strong>kommt</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Reported Speech:</strong><br>
                 Er sagt. + Er hat Hunger.<br>
-                → Er sagt, <span class="dass">dass</span> er Hunger <strong>hat</strong>.
+                → Er sagt, <span class="highlight-warning">dass</span> er Hunger <strong>hat</strong>.
             </div>
         </div>
 
-        <h3>With Modal Verbs</h3>
+        <h3 class="subsection-title">With Modal Verbs</h3>
         <div class="example-box">
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Belief + Modal Verb:</strong><br>
                 Ich glaube. + Er will nach Deutschland fliegen.<br>
-                → Ich glaube, <span class="dass">dass</span> er nach Deutschland fliegen <strong>will</strong>.
+                → Ich glaube, <span class="highlight-warning">dass</span> er nach Deutschland fliegen <strong>will</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Knowing + Modal Verb:</strong><br>
                 Ich weiß. + Er muss viel arbeiten.<br>
-                → Ich weiß, <span class="dass">dass</span> er viel arbeiten <strong>muss</strong>.
+                → Ich weiß, <span class="highlight-warning">dass</span> er viel arbeiten <strong>muss</strong>.
             </div>
         </div>
 
-        <h3>With Perfect Tense</h3>
+        <h3 class="subsection-title">With Perfect Tense</h3>
         <div class="example-box">
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Guess + Present Perfect:</strong><br>
                 Ich vermute. + Er hat alles gut verstanden.<br>
-                → Ich vermute, <span class="dass">dass</span> er alles gut verstanden <strong>hat</strong>.
+                → Ich vermute, <span class="highlight-warning">dass</span> er alles gut verstanden <strong>hat</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Belief + Past Action:</strong><br>
                 Ich glaube. + Er hat gestern nicht gut geschlafen.<br>
-                → Ich glaube, <span class="dass">dass</span> er gestern nicht gut geschlafen <strong>hat</strong>.
+                → Ich glaube, <span class="highlight-warning">dass</span> er gestern nicht gut geschlafen <strong>hat</strong>.
             </div>
         </div>
 
-        <h3>With Separable Verbs</h3>
+        <h3 class="subsection-title">With Separable Verbs</h3>
         <div class="example-box">
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Thinking + Separable Verb:</strong><br>
                 Ich denke. + Er ruft mich gleich an.<br>
-                → Ich denke, <span class="dass">dass</span> er mich gleich <strong>anruft</strong>.
+                → Ich denke, <span class="highlight-warning">dass</span> er mich gleich <strong>anruft</strong>.
             </div>
         </div>
 
-        <h2>5. <span class="ob">Ob</span> (If / Whether)</h2>
+        <h2 class="section-title">5. <span class="highlight-neutral">Ob</span> (If / Whether)</h2>
         
-        <div class="key-rule">
+        <div class="rule-box">
             <h4>🎯 Function:</h4>
             <p>Introduces a yes/no question or expresses uncertainty.</p>
             <h4>🔑 Key Rule:</h4>
-            <p>The conjugated verb goes to the end of the <span class="ob">ob</span>-clause.</p>
+            <p>The conjugated verb goes to the end of the <span class="highlight-neutral">ob</span>-clause.</p>
         </div>
 
         <div class="structure-box">
             <strong>Structure:</strong><br>
-            [Main Clause], <span class="ob">ob</span> [Subject] [Rest] [Verb]
+            [Main Clause], <span class="highlight-neutral">ob</span> [Subject] [Rest] [Verb]
         </div>
 
-        <h3>Basic Examples</h3>
+        <h3 class="subsection-title">Basic Examples</h3>
         <div class="example-box">
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Uncertainty:</strong><br>
                 Ich weiß nicht. + Er kommt heute.<br>
-                → Ich weiß nicht, <span class="ob">ob</span> er heute <strong>kommt</strong>.
+                → Ich weiß nicht, <span class="highlight-neutral">ob</span> er heute <strong>kommt</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Not Sure:</strong><br>
                 Ich bin nicht sicher. + Er sagt die Wahrheit.<br>
-                → Ich bin nicht sicher, <span class="ob">ob</span> er die Wahrheit <strong>sagt</strong>.
+                → Ich bin nicht sicher, <span class="highlight-neutral">ob</span> er die Wahrheit <strong>sagt</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Permission:</strong><br>
                 Ich weiß nicht. + Ich darf hier bleiben.<br>
-                → Ich weiß nicht, <span class="ob">ob</span> ich hier bleiben <strong>darf</strong>.
+                → Ich weiß nicht, <span class="highlight-neutral">ob</span> ich hier bleiben <strong>darf</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Skill:</strong><br>
                 Ich bin unsicher. + Er kann gut Deutsch sprechen.<br>
-                → Ich bin unsicher, <span class="ob">ob</span> er gut Deutsch sprechen <strong>kann</strong>.
+                → Ich bin unsicher, <span class="highlight-neutral">ob</span> er gut Deutsch sprechen <strong>kann</strong>.
             </div>
         </div>
 
-        <h3>With Perfect Tense</h3>
+        <h3 class="subsection-title">With Perfect Tense</h3>
         <div class="example-box">
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Reported Speech + Past Event:</strong><br>
                 Er hat nicht gesagt. + Er hat seine Freundin getroffen.<br>
-                → Er hat nicht gesagt, <span class="ob">ob</span> er seine Freundin getroffen <strong>hat</strong>.
+                → Er hat nicht gesagt, <span class="highlight-neutral">ob</span> er seine Freundin getroffen <strong>hat</strong>.
             </div>
             
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Uncertainty + Past Action:</strong><br>
                 Ich weiß nicht. + Ich habe dir das gesagt.<br>
-                → Ich weiß nicht, <span class="ob">ob</span> ich dir das gesagt <strong>habe</strong>.
+                → Ich weiß nicht, <span class="highlight-neutral">ob</span> ich dir das gesagt <strong>habe</strong>.
             </div>
         </div>
 
-        <h3>With Separable Verbs</h3>
+        <h3 class="subsection-title">With Separable Verbs</h3>
         <div class="example-box">
-            <div class="example-transformation">
+            <div class="example-item">
                 <strong>Reported Uncertainty + Separable Verb:</strong><br>
                 Er hat nicht Bescheid gesagt. + Er kommt heute mit.<br>
-                → Er hat nicht Bescheid gesagt, <span class="ob">ob</span> er heute <strong>mitkommt</strong>.
+                → Er hat nicht Bescheid gesagt, <span class="highlight-neutral">ob</span> er heute <strong>mitkommt</strong>.
             </div>
         </div>
 
-        <h2>6. <span class="w-word">W-Fragen als Konnektoren</span> (W-Questions as Connectors)</h2>
+        <h2 class="section-title">6. <span class="highlight-success">W-Fragen als Konnektoren</span> (W-Questions as Connectors)</h2>
         
-        <div class="key-rule">
+        <div class="rule-box">
             <h4>🎯 Function:</h4>
             <p>Introduce indirect questions using question words.</p>
             <h4>🔑 Key Rule:</h4>
             <p>The conjugated verb goes to the end of the W-question clause.</p>
         </div>
 
-        <h3>Common W-Words (Question Words)</h3>
-        <div class="w-words-grid">
-            <div class="w-word-item">
-                <div class="w-word-german">wie</div>
-                <div class="w-word-english">how</div>
+        <h3 class="subsection-title">Common W-Words (Question Words)</h3>
+        <div class="auto-grid">
+            <div class="grid-item">
+                <div class="grid-item-title">wie</div>
+                <div class="grid-item-example">how</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">wer</div>
-                <div class="w-word-english">who</div>
+            <div class="grid-item">
+                <div class="grid-item-title">wer</div>
+                <div class="grid-item-example">who</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">wo</div>
-                <div class="w-word-english">where</div>
+            <div class="grid-item">
+                <div class="grid-item-title">wo</div>
+                <div class="grid-item-example">where</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">was</div>
-                <div class="w-word-english">what</div>
+            <div class="grid-item">
+                <div class="grid-item-title">was</div>
+                <div class="grid-item-example">what</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">wann</div>
-                <div class="w-word-english">when</div>
+            <div class="grid-item">
+                <div class="grid-item-title">wann</div>
+                <div class="grid-item-example">when</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">warum</div>
-                <div class="w-word-english">why</div>
+            <div class="grid-item">
+                <div class="grid-item-title">warum</div>
+                <div class="grid-item-example">why</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">woher</div>
-                <div class="w-word-english">from where</div>
+            <div class="grid-item">
+                <div class="grid-item-title">woher</div>
+                <div class="grid-item-example">from where</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">wohin</div>
-                <div class="w-word-english">to where</div>
+            <div class="grid-item">
+                <div class="grid-item-title">wohin</div>
+                <div class="grid-item-example">to where</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">wie viel/viele</div>
-                <div class="w-word-english">how much/many</div>
+            <div class="grid-item">
+                <div class="grid-item-title">wie viel/viele</div>
+                <div class="grid-item-example">how much/many</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">welche</div>
-                <div class="w-word-english">which</div>
+            <div class="grid-item">
+                <div class="grid-item-title">welche</div>
+                <div class="grid-item-example">which</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">wie lange</div>
-                <div class="w-word-english">how long</div>
+            <div class="grid-item">
+                <div class="grid-item-title">wie lange</div>
+                <div class="grid-item-example">how long</div>
             </div>
-            <div class="w-word-item">
-                <div class="w-word-german">von wann bis wann</div>
-                <div class="w-word-english">from when until when</div>
+            <div class="grid-item">
+                <div class="grid-item-title">von wann bis wann</div>
+                <div class="grid-item-example">from when until when</div>
             </div>
         </div>
 
-        <h3>Examples</h3>
+        <h3 class="subsection-title">Examples</h3>
         <div class="example-box">
-            <div class="example-transformation">
-                <strong>Time – <span class="w-word">wann</span>:</strong><br>
+            <div class="example-item">
+                <strong>Time – <span class="highlight-success">wann</span>:</strong><br>
                 Ich weiß nicht. + Wann kommt er nach Hause?<br>
-                → Ich weiß nicht, <span class="w-word">wann</span> er nach Hause <strong>kommt</strong>.
+                → Ich weiß nicht, <span class="highlight-success">wann</span> er nach Hause <strong>kommt</strong>.
             </div>
             
-            <div class="example-transformation">
-                <strong>Train Departure – <span class="w-word">wann</span>:</strong><br>
+            <div class="example-item">
+                <strong>Train Departure – <span class="highlight-success">wann</span>:</strong><br>
                 Er will wissen. + Wann fährt der Zug ab?<br>
-                → Er will wissen, <span class="w-word">wann</span> der Zug <strong>abfährt</strong>.
+                → Er will wissen, <span class="highlight-success">wann</span> der Zug <strong>abfährt</strong>.
             </div>
             
-            <div class="example-transformation">
-                <strong>Duration – <span class="w-word">wie lange</span>:</strong><br>
+            <div class="example-item">
+                <strong>Duration – <span class="highlight-success">wie lange</span>:</strong><br>
                 Ich habe keine Ahnung. + Wie lange dauert es?<br>
-                → Ich habe keine Ahnung, <span class="w-word">wie lange</span> es <strong>dauert</strong>.
+                → Ich habe keine Ahnung, <span class="highlight-success">wie lange</span> es <strong>dauert</strong>.
             </div>
             
-            <div class="example-transformation">
-                <strong>Schedule – <span class="w-word">von wann bis wann</span>:</strong><br>
+            <div class="example-item">
+                <strong>Schedule – <span class="highlight-success">von wann bis wann</span>:</strong><br>
                 Er fragt. + Von wann bis wann ist der Deutschkurs?<br>
-                → Er fragt, <span class="w-word">von wann bis wann</span> der Deutschkurs <strong>ist</strong>.
+                → Er fragt, <span class="highlight-success">von wann bis wann</span> der Deutschkurs <strong>ist</strong>.
             </div>
             
-            <div class="example-transformation">
-                <strong>Modal Verb – <span class="w-word">wann</span> + können:</strong><br>
+            <div class="example-item">
+                <strong>Modal Verb – <span class="highlight-success">wann</span> + können:</strong><br>
                 Er fragt. + Wann kannst du kommen?<br>
-                → Er fragt, <span class="w-word">wann</span> du kommen <strong>kannst</strong>.
+                → Er fragt, <span class="highlight-success">wann</span> du kommen <strong>kannst</strong>.
             </div>
         </div>
 
-        <h2>📋 Quick Reference Summary</h2>
+        <h2 class="section-title">📋 Quick Reference Summary</h2>
         
-        <table>
+        <table class="content-table">
             <thead>
                 <tr>
                     <th>Connector</th>
@@ -798,40 +436,40 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><span class="trotzdem">trotzdem</span></td>
+                    <td><span class="highlight-accent">trotzdem</span></td>
                     <td>contrast</td>
                     <td>inversion (pos. 2)</td>
-                    <td>Ich bin müde, <span class="trotzdem">trotzdem</span> <strong>arbeite</strong> ich.</td>
+                    <td>Ich bin müde, <span class="highlight-accent">trotzdem</span> <strong>arbeite</strong> ich.</td>
                 </tr>
                 <tr>
-                    <td><span class="deshalb">deshalb/deswegen</span></td>
+                    <td><span class="highlight-secondary">deshalb/deswegen</span></td>
                     <td>cause-effect</td>
                     <td>inversion (pos. 2)</td>
-                    <td>Es regnet, <span class="deshalb">deshalb</span> <strong>nehme</strong> ich einen Schirm.</td>
+                    <td>Es regnet, <span class="highlight-secondary">deshalb</span> <strong>nehme</strong> ich einen Schirm.</td>
                 </tr>
                 <tr>
-                    <td><span class="obwohl">obwohl</span></td>
+                    <td><span class="highlight-primary">obwohl</span></td>
                     <td>contrast</td>
                     <td>end of clause</td>
-                    <td><span class="obwohl">Obwohl</span> es <strong>regnet</strong>, gehe ich spazieren.</td>
+                    <td><span class="highlight-primary">Obwohl</span> es <strong>regnet</strong>, gehe ich spazieren.</td>
                 </tr>
                 <tr>
-                    <td><span class="dass">dass</span></td>
+                    <td><span class="highlight-warning">dass</span></td>
                     <td>explanation</td>
                     <td>end of clause</td>
-                    <td>Ich weiß, <span class="dass">dass</span> er morgen <strong>kommt</strong>.</td>
+                    <td>Ich weiß, <span class="highlight-warning">dass</span> er morgen <strong>kommt</strong>.</td>
                 </tr>
                 <tr>
-                    <td><span class="ob">ob</span></td>
+                    <td><span class="highlight-neutral">ob</span></td>
                     <td>uncertainty</td>
                     <td>end of clause</td>
-                    <td>Ich weiß nicht, <span class="ob">ob</span> er <strong>kommt</strong>.</td>
+                    <td>Ich weiß nicht, <span class="highlight-neutral">ob</span> er <strong>kommt</strong>.</td>
                 </tr>
                 <tr>
-                    <td><span class="w-word">W-words</span></td>
+                    <td><span class="highlight-success">W-words</span></td>
                     <td>indirect questions</td>
                     <td>end of clause</td>
-                    <td>Ich frage, <span class="w-word">wann</span> er <strong>kommt</strong>.</td>
+                    <td>Ich frage, <span class="highlight-success">wann</span> er <strong>kommt</strong>.</td>
                 </tr>
             </tbody>
         </table>
