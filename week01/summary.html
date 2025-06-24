@@ -4,74 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 1: Quick Summary - German A2</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
+        /* Summary-specific styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
         
-        /* Navigation Bar */
         .navbar {
             background: rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .nav-title {
-            color: white;
-            font-size: 1.3em;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .nav-breadcrumb {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9em;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .nav-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .nav-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
         }
         
         .container {
@@ -94,6 +37,8 @@
         .header h1 {
             margin: 0 0 10px 0;
             font-size: 2.2em;
+            border: none;
+            padding: 0;
         }
         
         .header .subtitle {
@@ -126,7 +71,6 @@
             padding: 20px;
         }
         
-        /* Quick reference table */
         .quick-table {
             width: 100%;
             border-collapse: collapse;
@@ -152,36 +96,6 @@
             background: #f8f9fa;
         }
         
-        /* Color coding */
-        .masc { background-color: #ffebee; color: #c62828; font-weight: bold; }
-        .fem { background-color: #e8f5e8; color: #2e7d32; font-weight: bold; }
-        .neut { background-color: #e3f2fd; color: #1565c0; font-weight: bold; }
-        .plural { background-color: #fff3e0; color: #ef6c00; font-weight: bold; }
-        
-        /* Key points */
-        .key-points {
-            background: #f0f8ff;
-            border: 2px solid #4169e1;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .key-points h4 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        
-        .key-points ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        
-        .key-points li {
-            margin: 5px 0;
-        }
-        
-        /* Examples table */
         .examples-table {
             width: 100%;
             border-collapse: collapse;
@@ -204,7 +118,6 @@
             background: #f8f9fa;
         }
         
-        /* Verb lists */
         .verb-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -239,7 +152,6 @@
             border-bottom: none;
         }
         
-        /* Formation boxes */
         .formation-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -267,7 +179,6 @@
             margin-top: 8px;
         }
         
-        /* Bottom navigation */
         .bottom-nav {
             background: white;
             padding: 20px;
@@ -278,49 +189,7 @@
             border-top: 1px solid #e8f4f8;
         }
         
-        .bottom-nav-btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background: #3498db;
-            color: white;
-        }
-        
-        .btn-secondary {
-            background: #95a5a6;
-            color: white;
-        }
-        
-        .bottom-nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .bottom-nav-btn:disabled {
-            background: #bdc3c7;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        
-        /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
             .container {
                 margin: 10px;
             }
@@ -351,23 +220,9 @@
                 padding: 6px 4px;
             }
         }
-        
-        /* Print styles */
-        @media print {
-            .navbar, .bottom-nav {
-                display: none;
-            }
-            body {
-                background: white;
-            }
-            .container {
-                box-shadow: none;
-                margin: 0;
-            }
-        }
     </style>
 </head>
-<body>
+<body class="week01-theme">
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -378,7 +233,7 @@
             <div class="nav-buttons">
                 <a href="../index.html" class="nav-btn">🏠 Home</a>
                 <a href="index.html" class="nav-btn">📚 Full Lesson</a>
-                <a href="../week02/index.html" class="nav-btn" style="opacity: 0.6; pointer-events: none;">📖 Week 2</a>
+                <a href="../week02/summary.html" class="nav-btn">📖 Week 2</a>
             </div>
         </div>
     </nav>
@@ -400,54 +255,54 @@
                         <thead>
                             <tr>
                                 <th>👤 Owner</th>
-                                <th class="masc">♂️ der</th>
-                                <th class="fem">♀️ die</th>
-                                <th class="neut">⚪ das</th>
-                                <th class="plural">👥 die (Plural)</th>
+                                <th class="highlight-warning">♂️ der</th>
+                                <th class="highlight-secondary">♀️ die</th>
+                                <th class="highlight-primary">⚪ das</th>
+                                <th class="highlight-accent">👥 die (Plural)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>ich</strong> (I)</td>
-                                <td>mein<span class="masc">e/n/em</span></td>
-                                <td>meine<span class="fem">/r</span></td>
-                                <td>mein<span class="neut">/em</span></td>
-                                <td>meine → <span class="plural">meinen + n</span></td>
+                                <td>mein<span class="highlight-warning">e/n/em</span></td>
+                                <td>meine<span class="highlight-secondary">/r</span></td>
+                                <td>mein<span class="highlight-primary">/em</span></td>
+                                <td>meine → <span class="highlight-accent">meinen + n</span></td>
                             </tr>
                             <tr>
                                 <td><strong>du</strong> (you)</td>
                                 <td>dein...</td>
                                 <td>deine...</td>
                                 <td>dein...</td>
-                                <td>deine → <span class="plural">deinen + n</span></td>
+                                <td>deine → <span class="highlight-accent">deinen + n</span></td>
                             </tr>
                             <tr>
                                 <td><strong>er</strong> (he)</td>
                                 <td>sein...</td>
                                 <td>seine...</td>
                                 <td>sein...</td>
-                                <td>seine → <span class="plural">seinen + n</span></td>
+                                <td>seine → <span class="highlight-accent">seinen + n</span></td>
                             </tr>
                             <tr>
                                 <td><strong>sie</strong> (she)</td>
                                 <td>ihr...</td>
                                 <td>ihre...</td>
                                 <td>ihr...</td>
-                                <td>ihre → <span class="plural">ihren + n</span></td>
+                                <td>ihre → <span class="highlight-accent">ihren + n</span></td>
                             </tr>
                             <tr>
                                 <td><strong>wir</strong> (we)</td>
                                 <td>unser...</td>
                                 <td>unsere...</td>
                                 <td>unser...</td>
-                                <td>unsere → <span class="plural">unseren + n</span></td>
+                                <td>unsere → <span class="highlight-accent">unseren + n</span></td>
                             </tr>
                             <tr>
                                 <td><strong>ihr</strong> (you pl.)</td>
-                                <td><span class="masc">euer → euren</span></td>
+                                <td><span class="highlight-warning">euer → euren</span></td>
                                 <td>eure</td>
                                 <td>euer</td>
-                                <td>eure → <span class="plural">euren + n</span></td>
+                                <td>eure → <span class="highlight-accent">euren + n</span></td>
                             </tr>
                             <tr>
                                 <td><strong>Sie</strong> (formal)</td>
@@ -461,12 +316,12 @@
                                 <td>ihr...</td>
                                 <td>ihre...</td>
                                 <td>ihr...</td>
-                                <td>ihre → <span class="plural">ihren + n</span></td>
+                                <td>ihre → <span class="highlight-accent">ihren + n</span></td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <div class="key-points">
+                    <div class="rule-box">
                         <h4>🧠 REMEMBER:</h4>
                         <ul>
                             <li><strong>-e</strong> endings → Feminine & Plural</li>
@@ -493,17 +348,17 @@
                                 <td>"Dog" is the subject</td>
                             </tr>
                             <tr>
-                                <td>Ich sehe <strong>meinen</strong> Hund.</td>
+                                <td>Ich sehe <span class="highlight-warning">meinen</span> Hund.</td>
                                 <td>Akkusativ</td>
                                 <td>"Dog" is the direct object</td>
                             </tr>
                             <tr>
-                                <td>Ich gebe <strong>meinem</strong> Hund Futter.</td>
+                                <td>Ich gebe <span class="highlight-primary">meinem</span> Hund Futter.</td>
                                 <td>Dativ</td>
                                 <td>"Dog" receives the object</td>
                             </tr>
                             <tr>
-                                <td>Ich spreche mit <strong>meinen Freunden</strong></td>
+                                <td>Ich spreche mit <span class="highlight-accent">meinen Freunden</span></td>
                                 <td>Dativ Plural</td>
                                 <td>Plural → add <strong>+n</strong></td>
                             </tr>
@@ -580,7 +435,7 @@
             <div class="part">
                 <div class="part-header">⏳ PART 4: The Perfekt Tense (Conversational Past)</div>
                 <div class="part-content">
-                    <div class="key-points">
+                    <div class="rule-box">
                         <h4>🧩 Structure:</h4>
                         <p><strong>haben/sein (present) + Partizip II (end of sentence)</strong></p>
                     </div>
@@ -730,7 +585,7 @@
             <a href="index.html" class="bottom-nav-btn btn-primary">
                 📚 View Full Lesson
             </a>
-            <a href="../week02/summary.html" class="bottom-nav-btn btn-secondary" style="opacity: 0.6; pointer-events: none;">
+            <a href="../week02/summary.html" class="bottom-nav-btn btn-secondary">
                 📖 Week 2 Summary
             </a>
         </div>
