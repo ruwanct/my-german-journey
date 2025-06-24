@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2: Quick Summary - German A2 Connectors</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            min-height: 100vh;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .nav-title {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-breadcrumb {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9em;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2em;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        /* Connector cards */
+        .connector-card {
+            background: white;
+            border: 2px solid #e8f4f8;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .connector-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .connector-header {
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .trotzdem-header { background: linear-gradient(135deg, #ff9800, #f57c00); }
+        .deshalb-header { background: linear-gradient(135deg, #4caf50, #388e3c); }
+        .obwohl-header { background: linear-gradient(135deg, #2196f3, #1976d2); }
+        .dass-header { background: linear-gradient(135deg, #9c27b0, #7b1fa2); }
+        .ob-header { background: linear-gradient(135deg, #f44336, #d32f2f); }
+        .w-header { background: linear-gradient(135deg, #ffc107, #f57f17); }
+        
+        .connector-content {
+            padding: 20px;
+        }
+        
+        /* Color coding for inline text */
+        .trotzdem { background-color: #fff3e0; color: #ef6c00; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+        .deshalb { background-color: #e8f5e8; color: #2e7d32; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+        .obwohl { background-color: #e3f2fd; color: #1565c0; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+        .dass { background-color: #f3e5f5; color: #7b1fa2; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+        .ob { background-color: #ffebee; color: #c62828; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+        .w-word { background-color: #fff8e1; color: #f57f17; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+        
+        /* Structure and rule boxes */
+        .rule-box {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .structure-box {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .example-box {
+            background: #f0fff0;
+            border: 1px solid #90ee90;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            color: #856404;
+        }
+        
+        /* Memory tips section */
+        .memory-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .memory-section h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .memory-item {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .memory-item h4 {
+            margin-top: 0;
+            color: #fff;
+        }
+        
+        /* Pattern recognition table */
+        .pattern-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .pattern-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .pattern-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .pattern-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Bottom navigation */
+        .bottom-nav {
+            background: white;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e8f4f8;
+        }
+        
+        .bottom-nav-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+        
+        .bottom-nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .bottom-nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .container {
+                margin: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bottom-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .navbar, .bottom-nav {
+                display: none;
+            }
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="../index.html" class="nav-title">🇩🇪 German A2 Journey</a>
+                <div class="nav-breadcrumb">Week 02 • Quick Summary</div>
+            </div>
+            <div class="nav-buttons">
+                <a href="../index.html" class="nav-btn">🏠 Home</a>
+                <a href="index.html" class="nav-btn">📚 Full Lesson</a>
+                <a href="../week01/summary.html" class="nav-btn">📖 Week 1</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>🇩🇪 A2 Konnektoren – Quick Reference</h1>
+            <p class="subtitle">Master German connectors with clear rules and examples</p>
+        </div>
+
+        <div class="content">
+            <!-- 1. Trotzdem -->
+            <div class="connector-card">
+                <div class="connector-header trotzdem-header">
+                    1. <span class="trotzdem" style="background: rgba(255,255,255,0.2); color: white;">trotzdem</span> → nevertheless, however
+                </div>
+                <div class="connector-content">
+                    <div class="rule-box">
+                        <strong>Use:</strong> contrast/contradiction
+                    </div>
+                    <div class="structure-box">
+                        <strong>Structure:</strong> ..., <span class="trotzdem">trotzdem</span> [Verb] [Subject] ...
+                    </div>
+                    <div class="rule-box">
+                        ✅ <em>Verb inversion (Position 2)</em>
+                    </div>
+                    <div class="example-box">
+                        <strong>Example:</strong> Ich bin müde, <span class="trotzdem">trotzdem</span> <strong>arbeite</strong> ich.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Deshalb/Deswegen -->
+            <div class="connector-card">
+                <div class="connector-header deshalb-header">
+                    2. <span class="deshalb" style="background: rgba(255,255,255,0.2); color: white;">deshalb / deswegen</span> → therefore, that's why
+                </div>
+                <div class="connector-content">
+                    <div class="rule-box">
+                        <strong>Use:</strong> cause → effect
+                    </div>
+                    <div class="structure-box">
+                        <strong>Structure:</strong> ..., <span class="deshalb">deshalb</span> [Verb] [Subject] ...
+                    </div>
+                    <div class="rule-box">
+                        ✅ <em>Verb inversion (Position 2)</em>
+                    </div>
+                    <div class="example-box">
+                        <strong>Example:</strong> Ich habe Hunger, <span class="deshalb">deshalb</span> <strong>koche</strong> ich.
+                    </div>
+                    <div class="warning-box">
+                        <strong>Note:</strong> These two are completely interchangeable
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Obwohl -->
+            <div class="connector-card">
+                <div class="connector-header obwohl-header">
+                    3. <span class="obwohl" style="background: rgba(255,255,255,0.2); color: white;">obwohl</span> → although, even though
+                </div>
+                <div class="connector-content">
+                    <div class="rule-box">
+                        <strong>Use:</strong> concession/contrast
+                    </div>
+                    <div class="structure-box">
+                        <strong>Structure:</strong><br>
+                        • ..., <span class="obwohl">obwohl</span> [Subject] ... [Verb]<br>
+                        • <span class="obwohl">Obwohl</span> [Subject] ... [Verb], [Verb] [Subject] ...
+                    </div>
+                    <div class="rule-box">
+                        ✅ <em>Verb goes to the end of obwohl-clause</em><br>
+                        ⚠️ <em>If obwohl starts the sentence, main clause has verb inversion</em>
+                    </div>
+                    <div class="example-box">
+                        <strong>Example:</strong> <span class="obwohl">Obwohl</span> ich müde <strong>bin</strong>, lerne ich weiter.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Dass -->
+            <div class="connector-card">
+                <div class="connector-header dass-header">
+                    4. <span class="dass" style="background: rgba(255,255,255,0.2); color: white;">dass</span> → that
+                </div>
+                <div class="connector-content">
+                    <div class="rule-box">
+                        <strong>Use:</strong> explains/completes main clause
+                    </div>
+                    <div class="structure-box">
+                        <strong>Structure:</strong> ..., <span class="dass">dass</span> [Subject] ... [Verb]
+                    </div>
+                    <div class="rule-box">
+                        ✅ <em>Verb at the end</em>
+                    </div>
+                    <div class="example-box">
+                        <strong>Examples:</strong><br>
+                        • <strong>Basic:</strong> Ich weiß, <span class="dass">dass</span> er <strong>kommt</strong>.<br>
+                        • <strong>With modal:</strong> Ich glaube, <span class="dass">dass</span> er fliegen <strong>will</strong>.<br>
+                        • <strong>With Perfekt:</strong> Ich glaube, <span class="dass">dass</span> er geschlafen <strong>hat</strong>.<br>
+                        • <strong>With separable verb:</strong> Ich denke, <span class="dass">dass</span> er <strong>anruft</strong>. (not <em>an-ruft</em>)
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Ob -->
+            <div class="connector-card">
+                <div class="connector-header ob-header">
+                    5. <span class="ob" style="background: rgba(255,255,255,0.2); color: white;">ob</span> → if, whether
+                </div>
+                <div class="connector-content">
+                    <div class="rule-box">
+                        <strong>Use:</strong> uncertainty or indirect yes/no questions
+                    </div>
+                    <div class="structure-box">
+                        <strong>Structure:</strong> ..., <span class="ob">ob</span> [Subject] ... [Verb]
+                    </div>
+                    <div class="rule-box">
+                        ✅ <em>Verb at the end</em>
+                    </div>
+                    <div class="example-box">
+                        <strong>Examples:</strong><br>
+                        • <strong>Basic:</strong> Ich weiß nicht, <span class="ob">ob</span> er <strong>kommt</strong>.<br>
+                        • <strong>With modal:</strong> Ich bin unsicher, <span class="ob">ob</span> er bleiben <strong>kann</strong>.<br>
+                        • <strong>With Perfekt:</strong> Er hat nicht gesagt, <span class="ob">ob</span> er mitgekommen <strong>ist</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. W-Fragen -->
+            <div class="connector-card">
+                <div class="connector-header w-header">
+                    6. <span class="w-word" style="background: rgba(255,255,255,0.2); color: white;">W-Fragen</span> as connectors → wann, wie, wo, warum...
+                </div>
+                <div class="connector-content">
+                    <div class="rule-box">
+                        <strong>Use:</strong> indirect questions
+                    </div>
+                    <div class="structure-box">
+                        <strong>Structure:</strong> ..., [W-word] [Subject] ... [Verb]
+                    </div>
+                    <div class="rule-box">
+                        ✅ <em>Verb at the end</em>
+                    </div>
+                    <div class="warning-box">
+                        <strong>Common W-words:</strong> wann, wie, wo, was, warum, woher, wohin, wie lange, wie viel
+                    </div>
+                    <div class="example-box">
+                        <strong>Examples:</strong><br>
+                        • Ich weiß nicht, <span class="w-word">wann</span> er <strong>kommt</strong>.<br>
+                        • Er fragt, <span class="w-word">wie lange</span> es <strong>dauert</strong>.<br>
+                        • Ich habe keine Ahnung, <span class="w-word">warum</span> er traurig <strong>ist</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Tips Section -->
+            <div class="memory-section">
+                <h3>🧠 Memory Tips</h3>
+                
+                <div class="memory-grid">
+                    <div class="memory-item">
+                        <h4>Word Order Rules:</h4>
+                        <ul>
+                            <li><strong>Main clauses</strong> → <em>trotzdem / deshalb / deswegen</em> → <strong>verb inversion</strong></li>
+                            <li><strong>Subordinate clauses</strong> → <em>obwohl / dass / ob / W-Fragen</em> → <strong>verb at the end</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="memory-item">
+                        <h4>Special Cases:</h4>
+                        <ul>
+                            <li><strong>Modalverben & Perfekt</strong> → modal/auxiliary verb always at the <strong>very end</strong></li>
+                            <li><strong>Separable verbs</strong> in subordinate clauses → stay together (anrufen → anruft)</li>
+                            <li><strong>obwohl at sentence start</strong> → main clause gets verb inversion too</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="memory-item">
+                        <h4>Quick Test:</h4>
+                        <ul>
+                            <li>Can I answer with yes/no? → Use <strong>ob</strong></li>
+                            <li>Am I explaining something? → Use <strong>dass</strong></li>
+                            <li>Am I showing contrast? → Use <strong>obwohl</strong> or <strong>trotzdem</strong></li>
+                            <li>Am I showing cause/effect? → Use <strong>deshalb/deswegen</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pattern Recognition -->
+            <h3>📝 Pattern Recognition</h3>
+            <table class="pattern-table">
+                <thead>
+                    <tr>
+                        <th>Connector Type</th>
+                        <th>Examples</th>
+                        <th>Verb Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Coordinating</strong></td>
+                        <td><span class="trotzdem">trotzdem</span>, <span class="deshalb">deshalb</span>, <span class="deshalb">deswegen</span></td>
+                        <td>Position 2 (inversion)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subordinating</strong></td>
+                        <td><span class="obwohl">obwohl</span>, <span class="dass">dass</span>, <span class="ob">ob</span>, <span class="w-word">W-words</span></td>
+                        <td>End of clause</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="warning-box">
+                <strong>Remember:</strong> Subordinating connectors create dependent clauses that cannot stand alone!
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="../index.html" class="bottom-nav-btn btn-secondary">
+                🏠 Back to Home
+            </a>
+            <a href="index.html" class="bottom-nav-btn btn-primary">
+                📚 View Full Lesson
+            </a>
+            <a href="../week03/summary.html" class="bottom-nav-btn btn-secondary" style="opacity: 0.6; pointer-events: none;">
+                📖 Week 3 Summary
+            </a>
+        </div>
+    </div>
+</body>
+</html>
