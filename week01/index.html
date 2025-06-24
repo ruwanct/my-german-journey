@@ -3,13 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>German A2 Study Guide - Enhanced</title>
+    <title>Week 1: Possessive Articles & Perfect Tense - German A2</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f9f9f9;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .nav-title {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-breadcrumb {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9em;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .nav-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
         }
         
         .container {
@@ -19,6 +85,8 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         
         h1 {
@@ -179,8 +247,68 @@
             font-style: italic;
         }
         
+        /* Bottom Navigation */
+        .bottom-nav {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .bottom-nav-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+        
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .bottom-nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .bottom-nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
         /* Print styles */
         @media print {
+            .navbar, .bottom-nav {
+                display: none;
+            }
             body {
                 background-color: white;
             }
@@ -206,11 +334,47 @@
             min-width: 150px;
             font-weight: bold;
         }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .bottom-nav {
+                flex-direction: column;
+            }
+            
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="../index.html" class="nav-title">🇩🇪 German A2 Journey</a>
+                <div class="nav-breadcrumb">Week 01 • Full Lesson</div>
+            </div>
+            <div class="nav-buttons">
+                <a href="../index.html" class="nav-btn">🏠 Home</a>
+                <a href="summary.html" class="nav-btn">📝 Quick Notes</a>
+                <a href="../week02/index.html" class="nav-btn disabled">📖 Week 2</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <h1>🇩🇪 Enhanced German A2 Study Guide</h1>
+        <h1>🇩🇪 Week 1: Possessive Articles & Perfect Tense</h1>
         
         <h2>🎯 Color-Coded Case System</h2>
         
@@ -556,16 +720,3 @@
         <div class="memory-trick">
             <h4>👥 Study Partner Ideas:</h4>
             <ul>
-                <li>Take turns describing photos using possessive articles</li>
-                <li>Play "Perfect Tense Story" - build a story sentence by sentence</li>
-                <li>Quiz each other on irregular past participles</li>
-            </ul>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
-            <h3>🧩 Remember: German grammar is like a puzzle - once you see the patterns, it all fits together!</h3>
-            <p><em>Viel Erfolg mit deinem Deutsch! (Good luck with your German!)</em></p>
-        </div>
-    </div>
-</body>
-</html>
