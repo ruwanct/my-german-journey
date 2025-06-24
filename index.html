@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German A2 Study Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        .progress-bar {
+            background: #ecf0f1;
+            height: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            height: 100%;
+            width: 8.33%; /* 1 week out of 12 */
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .weeks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .week-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+        
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .week-card.completed {
+            border-left-color: #27ae60;
+        }
+        
+        .week-card.current {
+            border-left-color: #f39c12;
+            background: linear-gradient(135deg, #fff7e6, #ffffff);
+        }
+        
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .week-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .week-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-completed {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+        
+        .status-current {
+            background: #fef9e7;
+            color: #f39c12;
+        }
+        
+        .status-upcoming {
+            background: #eef2f7;
+            color: #7f8c8d;
+        }
+        
+        .week-title {
+            font-size: 1.3em;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        
+        .week-topics {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .week-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #7f8c8d;
+            transform: translateY(-2px);
+        }
+        
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .stats {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .weeks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .week-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇩🇪 My German A2 Journey</h1>
+            <p>Systematic Learning • Week by Week • Building Fluency</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <small>Week 1 of 12 completed</small>
+        </div>
+        
+        <div class="weeks-grid">
+            <!-- Week 1 - Completed -->
+            <div class="week-card completed">
+                <div class="week-header">
+                    <div class="week-number">Week 01</div>
+                    <div class="week-status status-completed">Completed</div>
+                </div>
+                <div class="week-title">Possessive Articles & Perfect Tense</div>
+                <div class="week-topics">
+                    • Possessive articles in all cases<br>
+                    • Perfect tense (haben vs. sein)<br>
+                    • Past participles formation<br>
+                    • Common A2 vocabulary
+                </div>
+                <div class="week-actions">
+                    <a href="week01/index.html" class="btn btn-primary">📚 Full Lesson</a>
+                    <a href="week01/summary.html" class="btn btn-secondary">📝 Quick Notes</a>
+                </div>
+            </div>
+            
+            <!-- Week 2 - Current -->
+            <div class="week-card current">
+                <div class="week-header">
+                    <div class="week-number">Week 02</div>
+                    <div class="week-status status-current">Current</div>
+                </div>
+                <div class="week-title">Dative Prepositions & Modal Verbs</div>
+                <div class="week-topics">
+                    • Dative prepositions (mit, nach, bei, von...)<br>
+                    • Modal verbs in perfect tense<br>
+                    • Time expressions<br>
+                    • Daily routine vocabulary
+                </div>
+                <div class="week-actions">
+                    <a href="week02/index.html" class="btn btn-primary">📚 Start Learning</a>
+                    <button class="btn btn-secondary" disabled>📝 Notes (Soon)</button>
+                </div>
+            </div>
+            
+            <!-- Week 3 - Upcoming -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 03</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Adjective Declensions</div>
+                <div class="week-topics">
+                    • Adjective endings with definite articles<br>
+                    • Adjective endings with indefinite articles<br>
+                    • Comparative and superlative<br>
+                    • Describing people and things
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 4 - Upcoming -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 04</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Reflexive Verbs & Pronouns</div>
+                <div class="week-topics">
+                    • Reflexive pronouns in accusative/dative<br>
+                    • Common reflexive verbs<br>
+                    • Daily routines with reflexive verbs<br>
+                    • Body parts vocabulary
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 5 - Upcoming -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 05</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Two-Way Prepositions</div>
+                <div class="week-topics">
+                    • Wechselpräpositionen (in, an, auf, über...)<br>
+                    • Accusative vs. Dative usage<br>
+                    • Location vs. direction<br>
+                    • Describing locations
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 6 - Upcoming -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 06</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Subordinate Clauses</div>
+                <div class="week-topics">
+                    • Word order in subordinate clauses<br>
+                    • Common conjunctions (weil, dass, ob...)<br>
+                    • Relative clauses introduction<br>
+                    • Complex sentence structures
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Continue pattern for remaining weeks... -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 07</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Genitive Case & Possession</div>
+                <div class="week-topics">
+                    • Genitive articles and pronouns<br>
+                    • Genitive prepositions<br>
+                    • Expressing possession<br>
+                    • Formal vs. informal possession
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 08</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Passive Voice</div>
+                <div class="week-topics">
+                    • Passive voice formation<br>
+                    • Passive with modal verbs<br>
+                    • When to use passive<br>
+                    • Formal writing style
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 09</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Subjunctive II (Konjunktiv II)</div>
+                <div class="week-topics">
+                    • Polite requests and wishes<br>
+                    • Hypothetical situations<br>
+                    • würde + infinitive<br>
+                    • Common subjunctive forms
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 10</div>
+                    <div class="week-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="week-title">Review & Integration</div>
+                <div class="week-topics">
+                    • Major grammar review<br>
+                    • Complex conversations<br>
+                    • Writing practice<br>
+                    • A2 exam preparation
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-primary" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-secondary" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">📊 Study Progress</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Weeks Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Weeks Remaining</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10%</div>
+                    <div class="stat-label">Course Progress</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">A2</div>
+                    <div class="stat-label">Target Level</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🎯 <strong>Goal:</strong> Complete A2 German in 10 weeks | 📅 <strong>Started:</strong> June 2025</p>
+            <p><em>"Ein kleiner Schritt jeden Tag führt zu großen Ergebnissen!"</em></p>
+        </div>
+    </div>
+</body>
+</html>
