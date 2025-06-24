@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German A2 Study Guide - Enhanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        
+        /* Color coding for cases */
+        .accusative-masc {
+            background-color: #ffebee;
+            border: 1px solid #f44336;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #c62828;
+            display: inline;
+        }
+        
+        .dative-masc-neut {
+            background-color: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #1565c0;
+            display: inline;
+        }
+        
+        .dative-fem {
+            background-color: #e8f5e8;
+            border: 1px solid #4caf50;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #2e7d32;
+            display: inline;
+        }
+        
+        .dative-plural {
+            background-color: #fff3e0;
+            border: 1px solid #ff9800;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #ef6c00;
+            display: inline;
+        }
+        
+        .neutral {
+            background-color: #f5f5f5;
+            border: 1px solid #9e9e9e;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #424242;
+            display: inline;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        /* Warning boxes */
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        /* Success boxes */
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success h4 {
+            color: #155724;
+            margin-top: 0;
+        }
+        
+        /* Memory tricks */
+        .memory-trick {
+            background-color: #e7f3ff;
+            border: 2px solid #0066cc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        /* Self-test sections */
+        .self-test {
+            background-color: #f0f8ff;
+            border: 2px dashed #4169e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .answer {
+            background-color: #f0fff0;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #32cd32;
+            font-weight: bold;
+        }
+        
+        /* Highlighted examples */
+        .example {
+            background-color: #fafafa;
+            border-left: 4px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 20px;
+            }
+        }
+        
+        .color-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        
+        .color-item {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            min-width: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇩🇪 Enhanced German A2 Study Guide</h1>
+        
+        <h2>🎯 Color-Coded Case System</h2>
+        
+        <div class="color-legend">
+            <div class="color-item accusative-masc">🔴 Accusative Masculine<br>Always -EN</div>
+            <div class="color-item dative-masc-neut">🔵 Dative Masc/Neut<br>Always -EM</div>
+            <div class="color-item dative-fem">🟢 Dative Feminine<br>Always -ER</div>
+            <div class="color-item dative-plural">🟡 Dative Plural<br>Always -EN + N</div>
+            <div class="color-item neutral">⚪ Everything Else<br>-E or no ending</div>
+        </div>
+
+        <h2>📋 Complete Possessive Articles Table</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Nominative (Subject)</th>
+                    <th>Accusative (Direct Object)</th>
+                    <th>Dative (Indirect Object)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ich (I)</strong></td>
+                    <td>mein/meine/mein/meine</td>
+                    <td>mein/meine/mein/<span class="accusative-masc">meinen</span></td>
+                    <td><span class="dative-masc-neut">meinem</span>/<span class="dative-fem">meiner</span>/<span class="dative-masc-neut">meinem</span>/<span class="dative-plural">meinen+n</span></td>
+                </tr>
+                <tr>
+                    <td><strong>du (you)</strong></td>
+                    <td>dein/deine/dein/deine</td>
+                    <td>dein/deine/dein/<span class="accusative-masc">deinen</span></td>
+                    <td><span class="dative-masc-neut">deinem</span>/<span class="dative-fem">deiner</span>/<span class="dative-masc-neut">deinem</span>/<span class="dative-plural">deinen+n</span></td>
+                </tr>
+                <tr>
+                    <td><strong>er (he)</strong></td>
+                    <td>sein/seine/sein/seine</td>
+                    <td>sein/seine/sein/<span class="accusative-masc">seinen</span></td>
+                    <td><span class="dative-masc-neut">seinem</span>/<span class="dative-fem">seiner</span>/<span class="dative-masc-neut">seinem</span>/<span class="dative-plural">seinen+n</span></td>
+                </tr>
+                <tr>
+                    <td><strong>sie (she)</strong></td>
+                    <td>ihr/ihre/ihr/ihre</td>
+                    <td>ihr/ihre/ihr/<span class="accusative-masc">ihren</span></td>
+                    <td><span class="dative-masc-neut">ihrem</span>/<span class="dative-fem">ihrer</span>/<span class="dative-masc-neut">ihrem</span>/<span class="dative-plural">ihren+n</span></td>
+                </tr>
+                <tr>
+                    <td><strong>wir (we)</strong></td>
+                    <td>unser/unsere/unser/unsere</td>
+                    <td>unser/unsere/unser/<span class="accusative-masc">unseren</span></td>
+                    <td><span class="dative-masc-neut">unserem</span>/<span class="dative-fem">unserer</span>/<span class="dative-masc-neut">unserem</span>/<span class="dative-plural">unseren+n</span></td>
+                </tr>
+                <tr>
+                    <td><strong>ihr (you pl.)</strong></td>
+                    <td>euer/eure/euer/eure</td>
+                    <td>euer/eure/euer/<span class="accusative-masc">euren</span></td>
+                    <td><span class="dative-masc-neut">eurem</span>/<span class="dative-fem">eurer</span>/<span class="dative-masc-neut">eurem</span>/<span class="dative-plural">euren+n</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Sie (You formal)</strong></td>
+                    <td>Ihr/Ihre/Ihr/Ihre</td>
+                    <td>Ihr/Ihre/Ihr/<span class="accusative-masc">Ihren</span></td>
+                    <td><span class="dative-masc-neut">Ihrem</span>/<span class="dative-fem">Ihrer</span>/<span class="dative-masc-neut">Ihrem</span>/<span class="dative-plural">Ihren+n</span></td>
+                </tr>
+                <tr>
+                    <td><strong>sie (they)</strong></td>
+                    <td>ihr/ihre/ihr/ihre</td>
+                    <td>ihr/ihre/ihr/<span class="accusative-masc">ihren</span></td>
+                    <td><span class="dative-masc-neut">ihrem</span>/<span class="dative-fem">ihrer</span>/<span class="dative-masc-neut">ihrem</span>/<span class="dative-plural">ihren+n</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🧠 Memory Tricks & Mnemonics</h2>
+        
+        <div class="memory-trick">
+            <h4>🥊 "Masculine Accusative = Beaten Up"</h4>
+            <p>Masculine nouns in accusative get the <span class="accusative-masc">-EN</span> ending (like "beaten"). This is the ONLY major change in accusative!</p>
+        </div>
+        
+        <div class="memory-trick">
+            <h4>🎁 "Dative = Giving Gifts"</h4>
+            <p>
+                • <span class="dative-masc-neut">EM</span> for boys (masculine/neuter)<br>
+                • <span class="dative-fem">ER</span> for girls (feminine)<br>
+                • <span class="dative-plural">EN</span> for groups (plural)
+            </p>
+        </div>
+        
+        <div class="memory-trick">
+            <h4>💰 "euer = Euro"</h4>
+            <p>Just like Euro drops the 'o' in other currencies (Euros), <strong>euer</strong> drops the 'e' when adding endings: <em>eurem, eure, euren</em></p>
+        </div>
+
+        <h2>⚠️ Common A2 Mistakes to Avoid</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="background-color: #dc3545;">❌ Wrong</th>
+                    <th style="background-color: #28a745;">✅ Correct</th>
+                    <th style="background-color: #17a2b8;">💡 Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>meinen</em> Schwester</td>
+                    <td><span class="dative-fem">meiner</span> Schwester</td>
+                    <td>Dative feminine = -ER</td>
+                </tr>
+                <tr>
+                    <td><em>eueren</em> Vater</td>
+                    <td><span class="accusative-masc">euren</span> Vater</td>
+                    <td>euer drops the 'e'</td>
+                </tr>
+                <tr>
+                    <td>Ich <em>bin</em> gegessen</td>
+                    <td>Ich <strong>habe</strong> gegessen</td>
+                    <td>essen = transitive → haben</td>
+                </tr>
+                <tr>
+                    <td><em>aufgestehen</em></td>
+                    <td><strong>aufgestanden</strong></td>
+                    <td>Separable: auf-ge-stand-en</td>
+                </tr>
+                <tr>
+                    <td><em>Hast</em> du gegangen?</td>
+                    <td><strong>Bist</strong> du gegangen?</td>
+                    <td>gehen uses sein</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📝 Self-Test Sections</h2>
+        
+        <div class="self-test">
+            <h3>Test 1: Fill in the Possessive Article</h3>
+            <p><em>(Cover the answers below and try first!)</em></p>
+            
+            <ol>
+                <li>Ich spreche mit _____ Mutter. (my)</li>
+                <li>Er kauft _____ Vater ein Geschenk. (his)</li>
+                <li>Wo ist _____ Auto? (your - informal)</li>
+                <li>Sie hilft _____ Kindern. (her)</li>
+            </ol>
+            
+            <div class="answer">
+                <strong>Answers:</strong><br>
+                1. <span class="dative-fem">meiner</span> (dative fem.)<br>
+                2. <span class="dative-masc-neut">seinem</span> (dative masc.)<br>
+                3. <span class="neutral">dein/euer</span> (nom. neut.)<br>
+                4. <span class="dative-plural">ihren</span> (dative plural)
+            </div>
+        </div>
+        
+        <div class="self-test">
+            <h3>Test 2: haben or sein?</h3>
+            
+            <ol>
+                <li>Ich _____ nach Berlin gefahren.</li>
+                <li>Er _____ einen Kaffee getrunken.</li>
+                <li>Wir _____ um 7 Uhr aufgestanden.</li>
+                <li>Sie _____ ein Buch gelesen.</li>
+            </ol>
+            
+            <div class="answer">
+                <strong>Answers:</strong><br>
+                1. <strong>bin</strong> (movement)<br>
+                2. <strong>hat</strong> (transitive)<br>
+                3. <strong>sind</strong> (state change)<br>
+                4. <strong>hat</strong> (transitive)
+            </div>
+        </div>
+
+        <h2>🗂️ A2 Vocabulary Practice Sentences</h2>
+        
+        <h3>👨‍👩‍👧‍👦 Family & Relationships</h3>
+        <div class="example">
+            • "Ich rufe <span class="accusative-masc">meine</span> Oma jeden Sonntag an." (accusative fem.)<br>
+            • "<span class="neutral">Unser</span> Sohn spielt mit <span class="dative-plural">seinen</span> Freunden." (nom. masc. / dative plural)<br>
+            • "Hilfst du <span class="dative-masc-neut">deinem</span> Bruder?" (dative masc.)
+        </div>
+        
+        <h3>🏠 Daily Routine & Activities</h3>
+        <div class="example">
+            • "<span class="neutral">Meine</span> Schwester ist um 6 Uhr aufgestanden." (nom. fem. + sein)<br>
+            • "Hast du <span class="neutral">deine</span> Hausaufgaben gemacht?" (accusative plural)<br>
+            • "Wir haben mit <span class="dative-plural">unseren</span> Nachbarn gesprochen." (dative plural)
+        </div>
+        
+        <h3>🛒 Shopping & Food</h3>
+        <div class="example">
+            • "Ich kaufe <span class="dative-fem">meiner</span> Freundin einen Ring." (dative fem. + accusative masc.)<br>
+            • "<span class="neutral">Euer</span> Kuchen schmeckt sehr gut!" (nom. masc.)<br>
+            • "Haben Sie <span class="accusative-masc">Ihren</span> Ausweis dabei?" (accusative masc. formal)
+        </div>
+
+        <h2>📊 Essential A2 Past Participles Chart</h2>
+        
+        <h3>🌟 Super Common (Learn First!)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Infinitive</th>
+                    <th>Past Participle</th>
+                    <th>Auxiliary</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>machen</strong></td>
+                    <td>gemacht</td>
+                    <td>haben</td>
+                    <td>Ich habe Sport <em>gemacht</em></td>
+                </tr>
+                <tr>
+                    <td><strong>gehen</strong></td>
+                    <td>gegangen</td>
+                    <td style="background-color: #e8f5e8;"><strong>sein</strong></td>
+                    <td>Ich bin nach Hause <em>gegangen</em></td>
+                </tr>
+                <tr>
+                    <td><strong>essen</strong></td>
+                    <td>gegessen</td>
+                    <td>haben</td>
+                    <td>Wir haben Pizza <em>gegessen</em></td>
+                </tr>
+                <tr>
+                    <td><strong>trinken</strong></td>
+                    <td>getrunken</td>
+                    <td>haben</td>
+                    <td>Er hat Bier <em>getrunken</em></td>
+                </tr>
+                <tr>
+                    <td><strong>schlafen</strong></td>
+                    <td>geschlafen</td>
+                    <td>haben</td>
+                    <td>Sie hat gut <em>geschlafen</em></td>
+                </tr>
+                <tr>
+                    <td><strong>kommen</strong></td>
+                    <td>gekommen</td>
+                    <td style="background-color: #e8f5e8;"><strong>sein</strong></td>
+                    <td>Du bist spät <em>gekommen</em></td>
+                </tr>
+                <tr>
+                    <td><strong>fahren</strong></td>
+                    <td>gefahren</td>
+                    <td style="background-color: #e8f5e8;"><strong>sein</strong></td>
+                    <td>Wir sind Auto <em>gefahren</em></td>
+                </tr>
+                <tr>
+                    <td><strong>sehen</strong></td>
+                    <td>gesehen</td>
+                    <td>haben</td>
+                    <td>Ich habe einen Film <em>gesehen</em></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🔄 Separable Verbs (A2 Level)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Infinitive</th>
+                    <th>Past Participle</th>
+                    <th>Remember</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>aufstehen</strong></td>
+                    <td>aufgestanden</td>
+                    <td>auf-<span style="color: red;">ge</span>-stand-en</td>
+                    <td>Ich bin früh <em>aufgestanden</em></td>
+                </tr>
+                <tr>
+                    <td><strong>einkaufen</strong></td>
+                    <td>eingekauft</td>
+                    <td>ein-<span style="color: red;">ge</span>-kauf-t</td>
+                    <td>Wir haben <em>eingekauft</em></td>
+                </tr>
+                <tr>
+                    <td><strong>anrufen</strong></td>
+                    <td>angerufen</td>
+                    <td>an-<span style="color: red;">ge</span>-ruf-en</td>
+                    <td>Er hat mich <em>angerufen</em></td>
+                </tr>
+                <tr>
+                    <td><strong>fernsehen</strong></td>
+                    <td>ferngesehen</td>
+                    <td>fern-<span style="color: red;">ge</span>-seh-en</td>
+                    <td>Sie hat <em>ferngesehen</em></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🎯 Quick Error Correction Practice</h2>
+        
+        <div class="warning">
+            <h4>Fix these common mistakes:</h4>
+            <ol>
+                <li>"Ich bin meine Hausaufgaben gemacht."</li>
+                <li>"Er spricht mit meinen Vater."</li>
+                <li>"Wir haben nach Berlin gegangen."</li>
+                <li>"Hast du aufgestehen um 7 Uhr?"</li>
+            </ol>
+        </div>
+        
+        <div class="success">
+            <h4>Corrections:</h4>
+            <ol>
+                <li>Ich <strong>habe</strong> meine Hausaufgaben gemacht. (haben for transitive)</li>
+                <li>Er spricht mit <span class="dative-masc-neut">meinem</span> Vater. (dative masculine)</li>
+                <li>Wir <strong>sind</strong> nach Berlin gegangen. (sein for movement)</li>
+                <li><strong>Bist</strong> du um 7 Uhr <strong>aufgestanden</strong>? (sein + correct participle)</li>
+            </ol>
+        </div>
+
+        <h2>🏆 A2 Study Tips</h2>
+        
+        <div class="success">
+            <h4>📅 Daily Practice Routine:</h4>
+            <ul>
+                <li><strong>Morning</strong>: Review one possessive article case (5 min)</li>
+                <li><strong>Afternoon</strong>: Write 3 sentences using perfect tense (10 min)</li>
+                <li><strong>Evening</strong>: Self-test with gap-fill exercises (10 min)</li>
+            </ul>
+        </div>
+        
+        <div class="warning">
+            <h4>✅ Before Your A2 Exam:</h4>
+            <ul>
+                <li>Can you describe your last weekend using perfect tense?</li>
+                <li>Can you talk about your family using possessive articles?</li>
+                <li>Do you automatically know haben vs. sein for common verbs?</li>
+            </ul>
+        </div>
+        
+        <div class="memory-trick">
+            <h4>👥 Study Partner Ideas:</h4>
+            <ul>
+                <li>Take turns describing photos using possessive articles</li>
+                <li>Play "Perfect Tense Story" - build a story sentence by sentence</li>
+                <li>Quiz each other on irregular past participles</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+            <h3>🧩 Remember: German grammar is like a puzzle - once you see the patterns, it all fits together!</h3>
+            <p><em>Viel Erfolg mit deinem Deutsch! (Good luck with your German!)</em></p>
+        </div>
+    </div>
+</body>
+</html>
