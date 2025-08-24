@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German B1 Study Journey - 16 Week Program</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.9);
+            color: #e74c3c;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .progress-bar {
+            background: #ecf0f1;
+            height: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+            height: 100%;
+            width: 0%; /* 0 weeks out of 16 */
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .coming-soon {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        
+        .coming-soon h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        
+        .coming-soon p {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        .features-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .feature-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: #fef2e7;
+            color: #f39c12;
+        }
+        
+        .feature-title {
+            font-size: 1.3em;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        
+        .feature-topics {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: not-allowed;
+            text-align: center;
+            background: #bdc3c7;
+            color: #7f8c8d;
+            opacity: 0.6;
+        }
+        
+        .stats {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .features-preview {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Level Selection</a>
+        
+        <div class="header">
+            <h1>🇩🇪 My German B1 Journey</h1>
+            <p>Intermediate German • 16 Week Program • Path to Fluency</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <small>🚧 B1 program in development - Coming Soon!</small>
+        </div>
+        
+        <div class="coming-soon">
+            <h2>🚀 B1 Program Coming Soon!</h2>
+            <p>The B1 intermediate German program is currently under development. This comprehensive 16-week course will take you from A2 to confident B1 level proficiency.</p>
+            
+            <div class="stats">
+                <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">📊 B1 Program Overview</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">16</div>
+                        <div class="stat-label">Total Weeks</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Soon</div>
+                        <div class="stat-label">Launch Date</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">B1</div>
+                        <div class="stat-label">Target Level</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features-preview">
+            <!-- Planned Weeks Preview -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-number">Weeks 1-4</div>
+                    <div class="feature-status">Planned</div>
+                </div>
+                <div class="feature-title">Advanced Grammar Foundations</div>
+                <div class="feature-topics">
+                    • Advanced subjunctive mood (Konjunktiv II)<br>
+                    • Complex passive constructions<br>
+                    • Advanced modal verb usage<br>
+                    • Reported speech (Indirekte Rede)
+                </div>
+                <button class="btn" disabled>📚 Coming Soon</button>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-number">Weeks 5-8</div>
+                    <div class="feature-status">Planned</div>
+                </div>
+                <div class="feature-title">Complex Communication</div>
+                <div class="feature-topics">
+                    • Advanced conversation strategies<br>
+                    • Formal and business German<br>
+                    • Opinion expression and argumentation<br>
+                    • Cultural context and idioms
+                </div>
+                <button class="btn" disabled>📚 Coming Soon</button>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-number">Weeks 9-12</div>
+                    <div class="feature-status">Planned</div>
+                </div>
+                <div class="feature-title">Specialized Topics</div>
+                <div class="feature-topics">
+                    • Academic and professional German<br>
+                    • Advanced text comprehension<br>
+                    • Complex writing skills<br>
+                    • Literature and media analysis
+                </div>
+                <button class="btn" disabled>📚 Coming Soon</button>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-number">Weeks 13-16</div>
+                    <div class="feature-status">Planned</div>
+                </div>
+                <div class="feature-title">B1 Mastery & Certification</div>
+                <div class="feature-topics">
+                    • Comprehensive grammar review<br>
+                    • B1 exam preparation strategies<br>
+                    • Mock exams and practice tests<br>
+                    • Certification readiness assessment
+                </div>
+                <button class="btn" disabled>📚 Coming Soon</button>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-number">Special</div>
+                    <div class="feature-status">Bonus</div>
+                </div>
+                <div class="feature-title">Practical Applications</div>
+                <div class="feature-topics">
+                    • Real-world German scenarios<br>
+                    • Job interview preparation<br>
+                    • University application support<br>
+                    • Living in Germany guide
+                </div>
+                <button class="btn" disabled>📚 Coming Soon</button>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-number">Tools</div>
+                    <div class="feature-status">Interactive</div>
+                </div>
+                <div class="feature-title">Learning Resources</div>
+                <div class="feature-topics">
+                    • Interactive grammar exercises<br>
+                    • Vocabulary building tools<br>
+                    • Pronunciation guides<br>
+                    • Progress tracking system
+                </div>
+                <button class="btn" disabled>📚 Coming Soon</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🔨 <strong>B1 Program Under Development</strong> | Complete your A2 journey first!</p>
+            <p><em>"Gut Ding will Weile haben."</em></p>
+            <p><strong>(Good things take time.)</strong></p>
+        </div>
+    </div>
+</body>
+</html>
