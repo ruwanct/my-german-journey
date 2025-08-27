@@ -3,191 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>German B1 Journey - My German Journey</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>German B1 Study Journey - 16 Week Program</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        .progress-bar {
+            background: #ecf0f1;
+            height: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+            height: 100%;
+            width: 6.25%; /* 1 week out of 16 */
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .weeks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .week-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .week-card.completed {
+            border-left-color: #27ae60;
+        }
+        
+        .week-card.current {
+            border-left-color: #f39c12;
+            background: linear-gradient(135deg, #fef9e7, #ffffff);
+        }
+        
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .week-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .week-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-completed {
+            background: #d4edda;
+            color: #27ae60;
+        }
+        
+        .status-current {
+            background: #fff3cd;
+            color: #f39c12;
+        }
+        
+        .status-upcoming {
+            background: #f8f9fa;
+            color: #6c757d;
+        }
+        
+        .week-title {
+            font-size: 1.3em;
+            color: #34495e;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .week-topics {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+        
+        .week-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #dc3545, #fd7e14);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(108, 117, 125, 0.1);
+            color: #6c757d;
+            border: 2px solid #dee2e6;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(108, 117, 125, 0.15);
+            border-color: #adb5bd;
+            transform: translateY(-2px);
+        }
+        
+        .btn-disabled {
+            background: #e9ecef;
+            color: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .stats {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .weeks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .week-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
-                <a href="../index.html" class="nav-button">← Level Selection</a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="container">
-        <header class="main-header">
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" style="text-decoration: none; color: #2c3e50; display: inline-block; margin-bottom: 10px;">← Back to Level Selection</a>
             <h1>🇩🇪 My German B1 Journey</h1>
-            <p class="subtitle">Intermediate German • 16 Week Program • Path to Fluency</p>
+            <p>Intermediate German • Week by Week • Path to Fluency</p>
             
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 6.25%;"></div>
-                </div>
-                <div class="progress-text">
-                    <span class="completed">1</span> of <span class="total">16</span> weeks completed (6%)
-                </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
             </div>
-        </header>
-
-        <section class="weeks-grid">
-            <!-- Week 01 - Available -->
-            <article class="week-card available">
-                <div class="week-header">
-                    <div class="week-number">01</div>
-                    <div class="week-status completed">✅ Available</div>
-                </div>
-                <div class="week-content">
-                    <h3 class="week-title">Der Genitiv</h3>
-                    <p class="week-description">Master the genitive case: possession, relationships, and formal expressions</p>
-                    <div class="week-topics">
-                        <span class="topic-tag">Articles & Endings</span>
-                        <span class="topic-tag">Noun Changes</span>
-                        <span class="topic-tag">Prepositions</span>
-                        <span class="topic-tag">von + Dativ Alternative</span>
-                    </div>
-                </div>
-                <div class="week-actions">
-                    <a href="week01/index.html" class="btn-primary">📚 Start Lesson</a>
-                    <a href="week01/summary.html" class="btn-secondary">📋 Quick Summary</a>
-                </div>
-            </article>
-
-            <!-- Week 02 - Coming Soon -->
-            <article class="week-card coming-soon">
-                <div class="week-header">
-                    <div class="week-number">02</div>
-                    <div class="week-status coming-soon">🚧 Coming Soon</div>
-                </div>
-                <div class="week-content">
-                    <h3 class="week-title">Konjunktiv II - Advanced</h3>
-                    <p class="week-description">Master advanced subjunctive mood for hypothetical situations and politeness</p>
-                    <div class="week-topics">
-                        <span class="topic-tag">Würde + Infinitive</span>
-                        <span class="topic-tag">Irregular Forms</span>
-                        <span class="topic-tag">Polite Requests</span>
-                        <span class="topic-tag">Hypothetical Situations</span>
-                    </div>
-                </div>
-                <div class="week-actions">
-                    <button class="btn-disabled" disabled>📚 Coming Soon</button>
-                    <button class="btn-disabled" disabled>📋 Summary</button>
-                </div>
-            </article>
-
-            <!-- Week 03 - Coming Soon -->
-            <article class="week-card coming-soon">
-                <div class="week-header">
-                    <div class="week-number">03</div>
-                    <div class="week-status coming-soon">🚧 Coming Soon</div>
-                </div>
-                <div class="week-content">
-                    <h3 class="week-title">Passiv - Complex Forms</h3>
-                    <p class="week-description">Advanced passive voice constructions and usage in formal contexts</p>
-                    <div class="week-topics">
-                        <span class="topic-tag">Vorgangspassiv</span>
-                        <span class="topic-tag">Zustandspassiv</span>
-                        <span class="topic-tag">Ersatzformen</span>
-                        <span class="topic-tag">Formal Writing</span>
-                    </div>
-                </div>
-                <div class="week-actions">
-                    <button class="btn-disabled" disabled>📚 Coming Soon</button>
-                    <button class="btn-disabled" disabled>📋 Summary</button>
-                </div>
-            </article>
-
-            <!-- Week 04 - Coming Soon -->
-            <article class="week-card coming-soon">
-                <div class="week-header">
-                    <div class="week-number">04</div>
-                    <div class="week-status coming-soon">🚧 Coming Soon</div>
-                </div>
-                <div class="week-content">
-                    <h3 class="week-title">Relativsätze - Advanced</h3>
-                    <p class="week-description">Complex relative clauses with prepositions and advanced constructions</p>
-                    <div class="week-topics">
-                        <span class="topic-tag">Relative Pronouns</span>
-                        <span class="topic-tag">Prepositions</span>
-                        <span class="topic-tag">Complex Sentences</span>
-                        <span class="topic-tag">Style & Variety</span>
-                    </div>
-                </div>
-                <div class="week-actions">
-                    <button class="btn-disabled" disabled>📚 Coming Soon</button>
-                    <button class="btn-disabled" disabled>📋 Summary</button>
-                </div>
-            </article>
-
-            <!-- Additional placeholder weeks -->
-            <article class="week-card placeholder">
-                <div class="week-header">
-                    <div class="week-number">05</div>
-                    <div class="week-status placeholder">📋 Planned</div>
-                </div>
-                <div class="week-content">
-                    <h3 class="week-title">Advanced Topics</h3>
-                    <p class="week-description">More intermediate German topics coming soon...</p>
-                </div>
-            </article>
-
-            <article class="week-card placeholder">
-                <div class="week-header">
-                    <div class="week-number">06-16</div>
-                    <div class="week-status placeholder">📋 In Development</div>
-                </div>
-                <div class="week-content">
-                    <h3 class="week-title">B1 Program Expansion</h3>
-                    <p class="week-description">Complete B1 curriculum with advanced grammar, conversation skills, and exam preparation</p>
-                </div>
-            </article>
-        </section>
-
-        <section class="program-info">
-            <div class="info-card">
-                <h3>🎯 B1 Learning Goals</h3>
-                <ul>
-                    <li>Express opinions and discuss complex topics</li>
-                    <li>Handle most situations when traveling</li>
-                    <li>Understand main points of complex texts</li>
-                    <li>Write coherent texts on familiar subjects</li>
-                    <li>Prepare for B1 certification exams</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h3>📚 What's Included</h3>
-                <ul>
-                    <li>Detailed grammar explanations</li>
-                    <li>Quick reference summaries</li>
-                    <li>Interactive practice exercises</li>
-                    <li>Real-world usage examples</li>
-                    <li>Cultural context and idioms</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h3>⏰ Study Schedule</h3>
-                <ul>
-                    <li>16 weeks of structured content</li>
-                    <li>2-3 hours per week recommended</li>
-                    <li>Self-paced learning approach</li>
-                    <li>Progressive difficulty increase</li>
-                    <li>Regular review and reinforcement</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="development-notice">
-            <h3>🔨 Development Status</h3>
-            <p>The B1 program is actively being developed! Week 01 is now available with the Genitiv case. More weeks will be added regularly.</p>
-            <p><em>Complete your <a href="../a2/index.html">A2 journey</a> while we build out the full B1 curriculum!</em></p>
+            <small>📚 1 of 16 weeks available - Let's build your fluency!</small>
         </div>
-    </main>
-
-    <footer class="main-footer">
-        <p>&copy; 2024 My German Journey - B1 Intermediate Level</p>
-        <p><em>"Der Weg ist das Ziel"</em> - The journey is the destination</p>
-    </footer>
+        
+        <div class="weeks-grid">
+            <!-- Week 1 - Available -->
+            <div class="week-card current">
+                <div class="week-header">
+                    <div class="week-number">Week 01</div>
+                    <div class="week-status status-current">Available</div>
+                </div>
+                <div class="week-title">Der Genitiv - Possession and Belonging</div>
+                <div class="week-topics">
+                    • Genitiv articles and endings (des, der, eines, einer)<br>
+                    • Noun endings (-s/-es) and weak nouns (N-Deklination)<br>
+                    • Adjective endings in Genitiv (always -en)<br>
+                    • von + Dativ alternative and Genitiv prepositions
+                </div>
+                <div class="week-actions">
+                    <a href="week01/index.html" class="btn btn-primary">📚 Full Lesson</a>
+                    <a href="week01/summary.html" class="btn btn-secondary">📝 Quick Notes</a>
+                </div>
+            </div>
+            
+            <!-- Week 2 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 02</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Konjunktiv II - Advanced Subjunctive</div>
+                <div class="week-topics">
+                    • würde + Infinitive constructions<br>
+                    • Irregular subjunctive forms (hätte, wäre, könnte)<br>
+                    • Polite requests and hypothetical situations<br>
+                    • Unreal conditions and wishes
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 3 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 03</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Passiv - Advanced Passive Voice</div>
+                <div class="week-topics">
+                    • Vorgangspassiv vs. Zustandspassiv<br>
+                    • Passive with modal verbs<br>
+                    • Ersatzformen des Passivs<br>
+                    • Formal and academic writing
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 4 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 04</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Relativsätze - Complex Relative Clauses</div>
+                <div class="week-topics">
+                    • Relative pronouns with prepositions<br>
+                    • was, wo, womit constructions<br>
+                    • Complex sentence structures<br>
+                    • Style and variety in writing
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 5 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 05</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Indirekte Rede - Reported Speech</div>
+                <div class="week-topics">
+                    • Konjunktiv I forms and usage<br>
+                    • Direct vs. indirect speech<br>
+                    • News and formal reports<br>
+                    • Shifting tenses and perspectives
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 6 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 06</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Partizipien - Advanced Participles</div>
+                <div class="week-topics">
+                    • Partizip I and Partizip II as adjectives<br>
+                    • Extended participle constructions<br>
+                    • Ersatzformen and stylistic usage<br>
+                    • Formal German expressions
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 7 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 07</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Nominalisierung - Noun Formation</div>
+                <div class="week-topics">
+                    • Converting verbs and adjectives to nouns<br>
+                    • Academic and formal writing style<br>
+                    • Complex sentence compression<br>
+                    • Professional German usage
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 8 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 08</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Modalverben - Advanced Modal Usage</div>
+                <div class="week-topics">
+                    • Subjective vs. objective modal verbs<br>
+                    • Past modal constructions<br>
+                    • Brauchen, lassen, and modal alternatives<br>
+                    • Nuanced meanings and contexts
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 9 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 09</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Temporalsätze - Complex Time Expressions</div>
+                <div class="week-topics">
+                    • nachdem, bevor, während, seit(dem)<br>
+                    • Temporal sequence and simultaneity<br>
+                    • Advanced time conjunctions<br>
+                    • Narrative and descriptive timing
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 10 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 10</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Finalsätze & Konsekutivsätze</div>
+                <div class="week-topics">
+                    • damit, um...zu, so dass constructions<br>
+                    • Purpose and consequence expressions<br>
+                    • Advanced subordinate clauses<br>
+                    • Logical connectors in German
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 11 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 11</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Business German Essentials</div>
+                <div class="week-topics">
+                    • Formal correspondence and emails<br>
+                    • Meeting and presentation language<br>
+                    • Professional vocabulary and phrases<br>
+                    • Workplace communication skills
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 12 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 12</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Cultural Context & Idioms</div>
+                <div class="week-topics">
+                    • German cultural expressions<br>
+                    • Idiomatic language and phrases<br>
+                    • Regional variations and dialects<br>
+                    • Understanding German humor and references
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 13 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 13</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Text Analysis & Comprehension</div>
+                <div class="week-topics">
+                    • Complex text understanding strategies<br>
+                    • Literary and journalistic German<br>
+                    • Critical reading and analysis<br>
+                    • Advanced vocabulary in context
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 14 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 14</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Academic German Skills</div>
+                <div class="week-topics">
+                    • University and research language<br>
+                    • Academic writing and presentations<br>
+                    • Scientific and technical German<br>
+                    • Thesis and paper structure
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 15 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 15</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">B1 Exam Preparation</div>
+                <div class="week-topics">
+                    • B1 exam format and strategies<br>
+                    • Speaking test preparation<br>
+                    • Writing task practice<br>
+                    • Reading and listening skills
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+            
+            <!-- Week 16 - Coming Soon -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div class="week-number">Week 16</div>
+                    <div class="week-status status-upcoming">Coming Soon</div>
+                </div>
+                <div class="week-title">Review & Integration - B1 Mastery</div>
+                <div class="week-topics">
+                    • Comprehensive grammar review<br>
+                    • Integration of all B1 skills<br>
+                    • Mock examination practice<br>
+                    • Certification readiness assessment
+                </div>
+                <div class="week-actions">
+                    <button class="btn btn-disabled" disabled>📚 Coming Soon</button>
+                    <button class="btn btn-disabled" disabled>📝 Coming Soon</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">📊 B1 Program Overview</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Total Weeks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Available</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6%</div>
+                    <div class="stat-label">Progress</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">B1</div>
+                    <div class="stat-label">Target Level</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🚀 <strong>B1 Program Now Live!</strong> | Week 01 is ready to start your intermediate journey!</p>
+            <p><em>"Übung macht den Meister."</em></p>
+            <p><strong>(Practice makes perfect.)</strong></p>
+        </div>
+    </div>
 </body>
 </html>
