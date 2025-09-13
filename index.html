@@ -499,10 +499,38 @@
             <p>🚀 <strong>Start your German learning journey today!</strong></p>
             <p><em>"Der beste Zeitpunkt zu beginnen war gestern. Der zweitbeste ist jetzt."</em></p>
             <p><strong>(The best time to start was yesterday. The second best is now.)</strong></p>
+            
+            <!-- Visitor Counter -->
+            <div style="margin-top: 20px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px; text-align: center;">
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.9em;">
+                    👥 Site visitors: <span id="goat-counter" style="font-weight: bold; color: #fff;">Loading...</span>
+                </p>
+            </div>
         </div>
     </div>
     <!-- Goat Counter Analytics -->
     <script data-goatcounter="https://german-journey-ruwan.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
+    
+    <!-- Visitor Counter Script -->
+    <script>
+        // Update visitor counter
+        function updateVisitorCount() {
+            fetch('https://german-journey-ruwan.goatcounter.com/counter//.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('goat-counter').textContent = data.count || 'N/A';
+                })
+                .catch(error => {
+                    console.log('Visitor count not available');
+                    document.getElementById('goat-counter').textContent = '---';
+                });
+        }
+        
+        // Load counter after page loads
+        window.addEventListener('load', function() {
+            setTimeout(updateVisitorCount, 1000); // Wait 1 second for goat counter to load
+        });
+    </script>
 </body>
 </html>
