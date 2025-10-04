@@ -41,12 +41,14 @@
         /* Custom styling for possessive articles table case separation */
         /* Red border after Nominative Plural (column 5) */
         .possessive-table td:nth-child(5),
-        .possessive-table th:nth-child(5) {
+        .possessive-table thead tr:first-child th:nth-child(2),
+        .possessive-table thead tr:nth-child(2) th:nth-child(4) {
             border-right: 3px solid #e74c3c !important;
         }
         /* Blue border after Accusative Plural (column 9) */
         .possessive-table td:nth-child(9),
-        .possessive-table th:nth-child(9) {
+        .possessive-table thead tr:first-child th:nth-child(3),
+        .possessive-table thead tr:nth-child(2) th:nth-child(8) {
             border-right: 3px solid #3498db !important;
         }
         
@@ -103,6 +105,7 @@
                     <th colspan="4">Dative (Indirect Object)</th>
                 </tr>
                 <tr>
+                    <!-- Owner column is handled by rowspan above -->
                     <th>♂️ Masc</th>
                     <th>♀️ Fem</th>
                     <th>🔶 Neut</th>
