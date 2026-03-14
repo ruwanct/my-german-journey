@@ -506,6 +506,18 @@ body {
 .week08-theme {
     --primary-color: #e67e22;
 }
+.week09-theme {
+    --primary-color: #8e44ad;
+}
+.week10-theme {
+    --primary-color: #16a085;
+}
+.week11-theme {
+    --primary-color: #d35400;
+}
+.week12-theme {
+    --primary-color: #c0392b;
+}
 
 /* ==========================================================================
    Summary Page Styles
